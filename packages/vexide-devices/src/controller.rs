@@ -203,7 +203,7 @@ impl ControllerScreen {
             .into_raw();
 
         unsafe {
-            vexControllerTextSet(id.0, (line + 1) as _, (col + 1) as _, text as *const _);
+            vexControllerTextSet(id.0 as _, (line + 1) as _, (col + 1) as _, text as *const _);
         }
 
         // stop rust from leaking the CString
@@ -250,13 +250,13 @@ impl Controller {
             screen: ControllerScreen { id },
             left_stick: Joystick {
                 id,
-                x_channel: V5_ControllerIndex::Axis1,
-                y_channel: V5_ControllerIndex::Axis2,
+                x_channel: V5_ControllerIndex::Axis4,
+                y_channel: V5_ControllerIndex::Axis3,
             },
             right_stick: Joystick {
                 id,
-                x_channel: V5_ControllerIndex::Axis3,
-                y_channel: V5_ControllerIndex::Axis4,
+                x_channel: V5_ControllerIndex::Axis1,
+                y_channel: V5_ControllerIndex::Axis2,
             },
             button_a: Button {
                 id,
