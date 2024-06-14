@@ -4,6 +4,10 @@ target = "./armv7a-vexos-eabi.json"
 [target.wasm32-unknown-unknown]
 rustflags = ["-Clink-arg=--export-memory", "-Clink-arg=--import-table"]
 
+[target."cfg(all(target_arch = \"arm\", target_os = \"none\"))"]
+# direct zx command is used instead of relying on shebang to improve windows compatibility
+runner = "zx ./scripts/runner.cjs"
+
 [unstable]
 build-std = ["core", "compiler_builtins", "alloc"]
 build-std-features = ["compiler-builtins-mem"]
