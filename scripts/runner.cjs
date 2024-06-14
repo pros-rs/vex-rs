@@ -13,9 +13,11 @@ async function main() {
 
     const lastArg = process.argv[process.argv.length - 1];
 
-    // Run upload and terminal in parallel so that serial output is not missed
+    // Run upload and terminal in parallel so that serial output is not missed.
+    // In this case cargo-pros is configured to perform only the last build step of stripping the binary
+    // so that it can be uploaded to the brain.
     const upload =
-        $`pros upload --target v5 --slot 1 --after run -- ${lastArg}.bin`.catch(
+        $`cargo pros upload --slot 1 --action run --strip --file ${lastArg}`.catch(
             () => {
                 console.log("Upload failed!");
                 terminal?.abort();
