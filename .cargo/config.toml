@@ -5,8 +5,7 @@ target = "./armv7a-vexos-eabi.json"
 rustflags = ["-Clink-arg=--export-memory", "-Clink-arg=--import-table"]
 
 [target."cfg(all(target_arch = \"arm\", target_os = \"none\"))"]
-# direct zx command is used instead of relying on shebang to improve windows compatibility
-runner = "zx ./scripts/runner.cjs"
+runner = "cargo pros run --slot 1 --strip --file"
 
 [unstable]
 build-std = ["core", "compiler_builtins", "alloc"]

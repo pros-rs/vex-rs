@@ -35,7 +35,6 @@
             cargo-binutils
             cargo-pros'
             pros-cli
-            zx
           ];
         };
       }));
