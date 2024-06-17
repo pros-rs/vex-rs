@@ -10,7 +10,7 @@ vexide is still in development but we are quickly moving towards competition rea
 
 ## Usage
 
-After setting up your development environment, connect to a VEX V5 via USB and run `cargo run --example basic` to execute the basic example on the V5 brain. Try the other examples like `screen` or `clawbot`, or create your own vexide project from the [template](https://github.com/vexide/vexide-template).
+After setting up your development environment, connect to a VEX V5 via USB and run `cargo run --example basic` to execute the basic example on the V5 brain. Try the other examples like `screen` or `clawbot`, or create your own vexide project by following by the instructions in the [template](https://github.com/vexide/vexide-template).
 
 ## Compiling
 
