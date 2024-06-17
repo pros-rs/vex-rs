@@ -5,7 +5,7 @@ target = "./armv7a-vexos-eabi.json"
 rustflags = ["-Clink-arg=--export-memory", "-Clink-arg=--import-table"]
 
 [target."cfg(all(target_arch = \"arm\", target_os = \"none\"))"]
-runner = "cargo pros run --slot 1 --strip --file"
+runner = "cargo pros run --strip --file"
 
 [unstable]
 build-std = ["core", "compiler_builtins", "alloc"]
